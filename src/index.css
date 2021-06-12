@@ -1,1 +1,14 @@
 
+.container{
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+@media  (max-width: 900px) {
+    
+    .container{
+        padding-right: 30px;
+       
+    }
+}
+

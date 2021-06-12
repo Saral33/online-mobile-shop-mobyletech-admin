@@ -3,11 +3,12 @@ import {Layout} from 'antd'
 
 import HeaderNav from '../components/Header'
 import SideBar from '../components/SideBar'
-import {BrowserRouter as Router, Route,Switch} from 'react-router-dom'
+import { Route,Switch} from 'react-router-dom'
 
 import Product from '../components/Product'
 import Users from '../components/Users'
 import DashBoard from '../components/DashBoard'
+
 
 const AdminScreen = () => {
     return (
@@ -15,7 +16,7 @@ const AdminScreen = () => {
             <HeaderNav/>
            <Layout style={{minHeight:'100vh'}}>
             <SideBar/>
-            <Layout style={{ padding: '50px 70px 70px' }}>
+            <Layout className='container' style={{ paddingTop:'50px',paddingBottom:'70px' }}>
                 <Switch>
                 <Route exact path='/' component={DashBoard}/>
                 <Route  path='/products' component={Product}/>
