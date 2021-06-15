@@ -3,12 +3,13 @@ import { ReactComponent as CloseOutlined } from '../assests/x.svg'
 import {ReactComponent as MenuOutlined} from '../assests/menu.svg'
 import {BellOutlined, MessageOutlined } from '@ant-design/icons';
 import { Badge } from 'antd';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
-    
+    const {user} = useSelector(state=> state.userInfo)
     return (
       <div className="header">
         <div className="logo-nav">
@@ -26,10 +27,11 @@ const Header = () => {
             <BellOutlined className='icons'/>
             </li>
             </Badge>
-            <li className="option" onClick={closeMobileMenu}>
+            <li className="option" style={{display:'flex',alignItems:'center'}} onClick={closeMobileMenu}>
             <div className='nav-image-cover'>
-            <img className='nav-image' src='https://images.unsplash.com/photo-1600804889194-e6fbf08ddb39?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZHNvbWUlMjBtYW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='user-pic'/>
+            <img className='nav-image' src={user?.image} alt='user-pic'/>
             </div>
+            <div style={{marginLeft:'6px'}}>{user?.username}</div>
             </li>
 
           </ul>
