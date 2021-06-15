@@ -18,7 +18,7 @@ const AdminScreen = () => {
             <SideBar/>
             <Layout className='container' style={{ paddingTop:'50px',paddingBottom:'70px' }}>
                 <Switch>
-                <Route exact path='/admin' component={DashBoard}/>
+                <Route exact path='/' component={DashBoard}/>
                 <Route  path='/products' component={Product}/>
                 <Route path = '/users' component = {Users}/>
                 </Switch>

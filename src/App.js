@@ -16,8 +16,8 @@ const App = () => {
     return (
         <Router>
         <Switch>
-        <Route path ='/' component ={LoginScreen}/>
-        <PrivateRoute path ='/admin' component= {AdminScreen}/>
+        <Route path ='/login' component ={LoginScreen}/>
+        <PrivateRoute path ='/' component= {AdminScreen}/>
         </Switch>
         </Router>
     )
