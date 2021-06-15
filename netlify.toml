@@ -6,7 +6,7 @@
   headers = {Access-Control-Allow-Origin = "*"}
 
 [[redirects]]
-  from = "/api/admin*"
+  from = "/api/admin"
   to = "https://mobyletech.herokuapp.com/api/admin"
   status = 200
   force = true
