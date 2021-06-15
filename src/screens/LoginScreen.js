@@ -17,7 +17,7 @@ const [code,setCode] = useState('')
 
 useEffect(()=>{
   if(success){
-    history.push('/')
+    history.push('/admin')
   }
 },[history,success])
 
