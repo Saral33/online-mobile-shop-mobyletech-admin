@@ -34,7 +34,9 @@ export const loadUser = ()=> async dispatch=>{
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            credentials:'include'
+            mode:'cors',
+            credentials:'include',
+            withCredentials:true
         }
         const res = await axios.get(`${urlApi}/api/admin`,config)
         dispatch({
