@@ -1,0 +1,1 @@
+export const urlApi = "https://mobyletech.herokuapp.com"
