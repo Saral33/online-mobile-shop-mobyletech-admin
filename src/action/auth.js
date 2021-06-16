@@ -12,7 +12,7 @@ export const loginAdmin = (body)=> async dispatch => {
               'Content-Type': 'application/json',
             },
           };
-        await axios.post(`${urlApi}/api/admin/adminlogin`,body,config)
+        await axios.post(`/api/admin/adminlogin`,body,config)
        
         dispatch({type:LOGIN_ADMIN_SUCCESS})
         dispatch(loadUser())
@@ -38,7 +38,7 @@ export const loadUser = ()=> async dispatch=>{
             credentials:'include',
             withCredentials:true
         }
-        const res = await axios.get(`${urlApi}/api/admin`,config)
+        const res = await axios.get(`/api/admin`,config)
         dispatch({
             type: LOAD_ADMIN_SUCCESS,
             payload: res.data
