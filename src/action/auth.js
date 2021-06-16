@@ -1,5 +1,5 @@
 import { LOGIN_ADMIN_REQ,LOGIN_ADMIN_SUCCESS,LOGIN_ADMIN_FAIL,LOAD_ADMIN_SUCCESS,LOAD_ADMIN_FAIL } from "../config/actiontypes";
-import { urlApi } from "../config/baseurl";
+//import { urlApi } from "../config/baseurl";
 import axios from 'axios'
 
 export const loginAdmin = (body)=> async dispatch => {
