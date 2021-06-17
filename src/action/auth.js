@@ -11,13 +11,17 @@ export const loginAdmin = (body)=> async dispatch => {
                 
               'Content-Type': 'application/json',
             },
+             withCredentials: true,
+              credentials: 'include'
           };
-        await axios.post(`/api/admin/adminlogin`,body,config)
+     const res=   await axios.post(`/api/admin/adminlogin`,body,config)
        
         dispatch({type:LOGIN_ADMIN_SUCCESS})
         dispatch(loadUser())
-        localStorage.setItem('authenticated', 'true')
+    
+            console.log(res)
     } catch (error) {
+    
         localStorage.removeItem('authenticated')
         dispatch({
             type: LOGIN_ADMIN_FAIL,
@@ -43,7 +47,7 @@ export const loadUser = ()=> async dispatch=>{
             type: LOAD_ADMIN_SUCCESS,
             payload: res.data
         })
-        dispatch({type:LOGIN_ADMIN_SUCCESS})
+     
         localStorage.setItem('authenticated', 'true')
     } catch (error) {
         localStorage.removeItem('authenticated')

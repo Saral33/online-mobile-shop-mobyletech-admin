@@ -16,9 +16,7 @@ const [password,setPassword] = useState('')
 const [code,setCode] = useState('')
 
 useEffect(()=>{
-  if(success){
-    history.push('/')
-  }
+  
 },[history,success])
 
 const submitHandler = ()=>{
