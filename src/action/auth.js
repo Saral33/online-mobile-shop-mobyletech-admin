@@ -50,6 +50,7 @@ export const loadUser = ()=> async dispatch=>{
      
         localStorage.setItem('authenticated', 'true')
     } catch (error) {
+        console.log(error.response)
         localStorage.removeItem('authenticated')
         dispatch({
             type: LOAD_ADMIN_FAIL,
