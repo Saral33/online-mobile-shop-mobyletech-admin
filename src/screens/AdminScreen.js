@@ -8,6 +8,7 @@ import { Route,Switch} from 'react-router-dom'
 import Product from '../components/Product'
 import Users from '../components/Users'
 import DashBoard from '../components/DashBoard'
+import Orders from '../components/Orders'
 
 
 const AdminScreen = () => {
@@ -21,6 +22,7 @@ const AdminScreen = () => {
                 <Route exact path='/' component={DashBoard}/>
                 <Route  path='/products' component={Product}/>
                 <Route path = '/users' component = {Users}/>
+                <Route path = '/orders' component={Orders}/>
                 </Switch>
              </Layout>
            </Layout>

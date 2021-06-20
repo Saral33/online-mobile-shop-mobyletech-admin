@@ -2,7 +2,7 @@ import { LOGIN_ADMIN_REQ,LOGIN_ADMIN_SUCCESS,LOGIN_ADMIN_FAIL, LOAD_ADMIN_SUCCES
 
 
 
-export const authReducer = (state={},action)=>{
+export const authReducer = (state={loading:true,success:false},action)=>{
 
     switch(action.type){
         default : return state
@@ -12,7 +12,7 @@ export const authReducer = (state={},action)=>{
         case LOGIN_ADMIN_SUCCESS:
             return{loading:false, success:true}
         case LOGIN_ADMIN_FAIL:
-            return{loading:false,error:action.payload}
+            return{loading:false,error:action.payload,success:false}
     }
 }
 

@@ -14,12 +14,13 @@ export const loginAdmin = (body)=> async dispatch => {
              withCredentials: true,
               credentials: 'include'
           };
-     const res=   await axios.post(`/api/admin/adminlogin`,body,config)
+       await axios.post(`/api/admin/adminlogin`,body,config)
        
         dispatch({type:LOGIN_ADMIN_SUCCESS})
         dispatch(loadUser())
-    
-            console.log(res)
+          localStorage.setItem('authenticated',true)
+       
+            
     } catch (error) {
     
         localStorage.removeItem('authenticated')
@@ -47,10 +48,12 @@ export const loadUser = ()=> async dispatch=>{
             type: LOAD_ADMIN_SUCCESS,
             payload: res.data
         })
-     
+        localStorage.setItem('authenticated',true)
+        dispatch({type: LOGIN_ADMIN_SUCCESS})
         localStorage.setItem('authenticated', 'true')
     } catch (error) {
-        console.log(error.response)
+        dispatch({type:LOGIN_ADMIN_FAIL,
+        payload: 'Cookie expired. Login again'})
         localStorage.removeItem('authenticated')
         dispatch({
             type: LOAD_ADMIN_FAIL,

@@ -10,17 +10,24 @@ const {Title} = Typography
 const LoginScreen = ({history}) => {
 
 const dispatch = useDispatch()
-const {success,error,loading} = useSelector(state=> state.auth)
+const {success,error} = useSelector(state=> state.auth)
+const [loading,setLoading] = useState(false)
 const [email,setEmail] = useState('')
 const [password,setPassword] = useState('')
 const [code,setCode] = useState('')
 
 useEffect(()=>{
-  
-},[history,success])
+  setLoading(false)
+  if(success){
+    history.push('/')
+  }
+
+},[history,success,error])
 
 const submitHandler = ()=>{
+  setLoading(true)
   dispatch(loginAdmin({email,password,code}))
+  
 }
     return (
        <Row className='login-main-screen' type="flex" justify="center" >
