@@ -3,12 +3,14 @@ import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly'
 import {authReducer, userInfoReducer} from './reducer/authReducer'
 import {userListReducer} from './reducer/userReducer'
-import { orderReducer } from './reducer/orderReducer'
+import { approveOrderReducer, orderReducer, recentOrderReducer } from './reducer/orderReducer'
 const reducer = combineReducers({
     auth: authReducer,
     userInfo: userInfoReducer,
     userList: userListReducer,
-    orderList : orderReducer
+    orderList : orderReducer,
+    recentOrderList : recentOrderReducer,
+    approveOrders: approveOrderReducer
 })
 
 

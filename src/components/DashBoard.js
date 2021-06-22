@@ -18,7 +18,7 @@ const DashBoard = () => {
           const getDetails = async()=>{
               const {data} = await axios.get(`/api/admin/stats`)
                 setUser(data.totalUsers)
-                setOrder(data.totalOrders)
+                setOrder(data.totalCheckouts)
                 setProduct(data.totalProducts)         
              }      
           getDetails()
