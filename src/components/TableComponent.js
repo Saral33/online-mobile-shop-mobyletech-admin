@@ -46,7 +46,7 @@ const TableComponent = () => {
         sn: index + 1,
         product: el.price_data.product_data.name,
         qty: el.quantity,
-        amount: (el.quantity * el.price_data.unit_amount_decimal) / 100,
+        amount: '$' + (el.quantity * el.price_data.unit_amount_decimal) / 100,
       }))}
       columns={column}
     />
