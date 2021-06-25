@@ -1,8 +1,12 @@
 import {
+  CREATE_PRODUCTS_FAIL,
+  CREATE_PRODUCTS_REQ,
+  CREATE_PRODUCTS_RESET,
+  CREATE_PRODUCTS_SUCCESS,
   GET_PRODUCTS_FAIL,
   GET_PRODUCTS_REQ,
   GET_PRODUCTS_SUCCESS,
-} from "../config/actiontypes";
+} from '../config/actiontypes';
 
 export const productsReducer = (state = { products: [] }, action) => {
   switch (action.type) {
@@ -19,5 +23,20 @@ export const productsReducer = (state = { products: [] }, action) => {
       };
     case GET_PRODUCTS_FAIL:
       return { loading: false, error: action.payload };
+  }
+};
+
+export const createProductReducer = (state = {}, action) => {
+  switch (action.type) {
+    default:
+      return state;
+    case CREATE_PRODUCTS_REQ:
+      return { ...state, loading: true };
+    case CREATE_PRODUCTS_SUCCESS:
+      return { loading: false, success: true };
+    case CREATE_PRODUCTS_FAIL:
+      return { loading: false, error: action.payload };
+    case CREATE_PRODUCTS_RESET:
+      return { state: {} };
   }
 };
