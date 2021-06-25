@@ -89,7 +89,7 @@ const Orders = () => {
               dataSource={orders.map((el) => ({
                 key: el._id,
                 id: el._id,
-                name: 'Laura',
+                name: el.username,
                 address: el.address,
                 paid: el.isPaid ? (
                   <CheckOutlined style={{ color: 'green' }} />
