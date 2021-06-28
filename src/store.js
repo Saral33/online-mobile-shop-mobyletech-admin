@@ -10,6 +10,7 @@ import {
 } from './reducer/orderReducer';
 import {
   createProductReducer,
+  getproductStats,
   productsReducer,
 } from './reducer/productReducer';
 const reducer = combineReducers({
@@ -21,6 +22,7 @@ const reducer = combineReducers({
   approveOrders: approveOrderReducer,
   productList: productsReducer,
   createProductAction: createProductReducer,
+  productStats: getproductStats,
 });
 
 const initialState = {};

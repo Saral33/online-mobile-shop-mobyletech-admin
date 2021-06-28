@@ -5,6 +5,9 @@ import {
   CREATE_PRODUCTS_SUCCESS,
   GET_PRODUCTS_FAIL,
   GET_PRODUCTS_REQ,
+  GET_PRODUCTS_STATS_FAIL,
+  GET_PRODUCTS_STATS_REQ,
+  GET_PRODUCTS_STATS_SUCCESS,
   GET_PRODUCTS_SUCCESS,
 } from '../config/actiontypes';
 
@@ -38,5 +41,18 @@ export const createProductReducer = (state = {}, action) => {
       return { loading: false, error: action.payload };
     case CREATE_PRODUCTS_RESET:
       return { state: {} };
+  }
+};
+
+export const getproductStats = (state = { stats: [] }, action) => {
+  switch (action.type) {
+    default:
+      return state;
+    case GET_PRODUCTS_STATS_REQ:
+      return { ...state, loading: true };
+    case GET_PRODUCTS_STATS_SUCCESS:
+      return { loading: false, stats: action.payload };
+    case GET_PRODUCTS_STATS_FAIL:
+      return { loading: false, error: action.payload };
   }
 };
